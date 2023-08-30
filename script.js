@@ -5,10 +5,16 @@ const userMarkChoiceiconO = document.querySelector(".select__icon__o");
 const gameTiles = document.querySelectorAll(".game-tile");
 const playerCpu = document.querySelector(".cpu-btn");
 const playerP = document.querySelector(".player-btn");
+const overlay = document.getElementById('overlay');
+const easyLevel = document.getElementById('easy-btn');
+const hardLevel = document.getElementById('hard-btn');
+const homePage = document.querySelector('.home-page');
+const gamePage = document.querySelector('.game-page');
 let vsPlayer;
 let backgroundImgUrl;
 let currentPlayerMark;
 let cpuMark;
+let gameLevel;
 
 userMarkChoiceX.addEventListener("click", function(event){
   event.preventDefault();
@@ -30,10 +36,30 @@ userMarkChoiceO.addEventListener("click", function(event){
   hover2() 
 })
 
+easyLevel.addEventListener('click', () => {
+  alert('You selected EASY level.');
+  overlay.style.display = 'none';
+  gameLevel = "Easy";
+  homePage.style.display = 'none';
+  gamePage.style.display = 'inline';
+  console.log(gameLevel)
+});
+
+hardLevel.addEventListener('click', () => {
+  alert('You selected HARD level.');
+  overlay.style.display = 'none';
+  gameLevel = "Hard";
+  homePage.style.display = 'none';
+  gamePage.style.display = 'inline';
+  console.log(gameLevel)
+});
 
 playerCpu.addEventListener("click", function(e){
   // console.log("User vs CPU")
   vsPlayer = "CPU"
+
+  overlay.style.display = 'flex';
+
   if(currentPlayerMark == 'X'){
     gameTiles.forEach(tile=>{
       tile.addEventListener("click", playVsCpu)
@@ -54,6 +80,8 @@ playerCpu.addEventListener("click", function(e){
 
 playerP.addEventListener("click", function(e){
   vsPlayer = "human"
+  homePage.style.display = 'none';
+  gamePage.style.display = 'inline';
   gameTiles.forEach(tile=>{
     tile.addEventListener("click", playVsplayer)
   })
@@ -186,40 +214,41 @@ function isGameOver(){
 
 function moveAI(){
 
-  // //simple chutiya AI
-  // for(var i = 0; i < 3; i++){
-  //   for(var j = 0; j < 3; j++){
-  //     if(grid[i][j] == ''){
-  //       console.log("AI move:", i, j);
-  //       return {
-  //         i: i,
-  //         j: j
-  //       }
-  //     }
-  //   }
-  // }
+  if(gameLevel == "Easy"){
 
-
-  //using minimax
-  let bestScore = -Infinity;
-  let move;
-  for(var i = 0; i < 3; i++){
-    for(var j = 0; j < 3; j++){
-      if(grid[i][j] == ''){
-        
-        grid[i][j] = cpuMark;
-        let score = minimax(grid, 0 , false);
-        grid[i][j] = '';
-        if(score > bestScore){
-          bestScore = score;
-          move = {i, j}
+    for(var i = 0; i < 3; i++){
+      for(var j = 0; j < 3; j++){
+        if(grid[i][j] == ''){
+          console.log("AI move:", i, j);
+          return {
+            i: i,
+            j: j
+          }
         }
       }
     }
+    
+  }else{
+    //using minimax
+    let bestScore = -Infinity;
+    let move;
+    for(var i = 0; i < 3; i++){
+      for(var j = 0; j < 3; j++){
+        if(grid[i][j] == ''){
+          
+          grid[i][j] = cpuMark;
+          let score = minimax(grid, 0 , false);
+          grid[i][j] = '';
+          if(score > bestScore){
+            bestScore = score;
+            move = {i, j}
+          }
+        }
+      }
+    }
+  
+    return move;
   }
-
-  return move;
-
 }
 
 
