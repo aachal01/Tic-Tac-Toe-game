@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor Tic Tac Toe game</title>
+    <link rel="icon" href="./assets/favicon-32x32.png" type="image/x-icon">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+
+<body>
+    <main>
+        <!-- Before game page -->
+        <div class="home-page">
+
+            <div class="logo-img">
+                <img src="./assets/logo.svg">
+            </div>
+            
+            <div class="choice-ctr">
+                <h1>PICK PLAYER 1'S MARK</h1>
+                <div class="choice">
+                    <button class="icon-x-active selected" value="X" >
+                        <svg class="select__icon">
+                            <use xlink:href="./assets/icon-x-select.svg#icon-x"></use>
+                        </svg>
+                    </button>
+                    <button class="icon-o-active" value="O">
+                        <svg class="select__icon">
+                            <use xlink:href="./assets/icon-o-select.svg#icon-o"></use>
+                          </svg>
+                    </button>
+                    
+                    
+                </div>
+                <h2>REMEMBER: X GOES FIRST</h2>
+            </div>
+
+            <div class="btns">
+                <button class="cpu-btn" id="cpu">NEW GAME(VS CPU)</button>
+                <button class="player-btn" id="player">NEW GAME(VS PLAYER)</button>
+            </div>
+            
+
+        </div>
+
+
+        <!--Game page -->
+        <div class="game-page">
+
+            <div class="header-display">
+                <img src="./assets/logo.svg" class="logo-img-display">
+
+                <div class="turn-display">                    
+                    <svg class="turn__icon__x">
+                        <use xlink:href="./assets/icon-x-select.svg#icon-x"></use>
+                    </svg>
+                    <span>TURN</span>                    
+                </div>
+
+                <button><img src="./assets/icon-restart.svg" class="icon-restart"></button>
+            </div>
+           
+            
+            <div class="game-board">
+
+                <div class="tile-column">
+                    <div class="game-tile" id="1" data-i="0", data-j="0"></div>
+                    <div class="game-tile" id="2" data-i="0", data-j="1"></div>
+                    <div class="game-tile" id="3" data-i="0", data-j="2"></div>
+                </div>
+
+                <div class="tile-column">
+                    <div class="game-tile" id="4" data-i="1", data-j="0"></div>
+                    <div class="game-tile" id="5" data-i="1", data-j="1"></div>
+                    <div class="game-tile" id="6" data-i="1", data-j="2"></div>
+                </div>
+
+                <div class="tile-column">
+                    <div class="game-tile" id="7" data-i="2", data-j="0"></div>
+                    <div class="game-tile" id="8" data-i="2", data-j="1"></div>
+                    <div class="game-tile" id="9" data-i="2", data-j="2"></div>
+                </div>
+                
+            </div>
+
+            <div class="score-board">
+                <div class="score-tile-1">
+                    <span>X <span>(YOU)</span> </span>
+                    <span class="score">0</span>
+                </div>
+
+                <div class="score-tile-2">
+                    <span>TIES</span> 
+                    <span class="score">0</span>
+                </div>
+
+                <div class="score-tile-3">
+                    <span>O <span>(YOU)</span> </span>
+                    <span class="score">0</span>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+
+</html>

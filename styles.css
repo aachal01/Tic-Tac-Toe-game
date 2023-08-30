@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* smallest height it can go else add scroll */
+    background-color: #1a2a33;
+    
+}
+
+.home-page{
+    width: 400px;
+}
+
+.logo-img {
+    display: flex;
+    justify-content: center;
+}
+
+.choice-ctr{
+    background-color: #1f3641;
+    box-shadow: 0px -8px 0px 0px #10212a inset;
+    margin: 30px 0px;
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choice-ctr h1{
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #a8bfc9;
+    /* margin-top: 10px; */
+}
+
+.choice{
+    background-color: #1a2a33;
+    padding: 10px;
+    display: flex;
+    width: 350px;
+    border-radius: 10px;
+    margin: 25px 0px;
+}
+
+.select__icon{
+    width: 32px;
+    height: 32px;
+    fill: #a8bfc9;
+}
+
+.icon-x-active, .icon-o-active{
+    width: 165px;
+    border-radius: 10px;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.selected{
+    background-color: #a8bfc9;
+    width: 165px;
+    border-radius: 10px;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.selected .select__icon{
+    width: 32px;
+    height: 32px;
+    fill: #1a2a33;
+}
+
+
+.choice-ctr h2{
+    font-family: "Outfit", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.0875rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #a8bfc9;
+    opacity: 0.5;
+    margin-bottom: 10px;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+.btns{
+    display: flex;
+    flex-direction: column;
+}
+
+.cpu-btn{
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    background-color: #f2b137;
+    box-shadow: 0px -8px 0px 0px #cc8b13 inset;
+    color: #10212a;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.player-btn{
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    background-color: #31c3bd;
+    box-shadow: 0px -8px 0px 0px #118c87 inset;
+    color: #10212a;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+
+/* Game-Page style */
+:root {
+    --chosen-mark-hover: none;
+    --chosen-mark-filled: none;
+}
+
+.game-page{
+    width: 420px;
+}
+
+.header-display{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.logo-img-display{
+    height: 32px;  
+}
+
+.turn-display{
+    background-color: #1f3641;
+    border-radius: 10px;
+    box-shadow: 0px -4px 0px 0px #10212a inset;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: center;    
+}
+
+.turn-display span{
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #a8bfc9;
+}
+
+.turn__icon__x{
+    height: 20px;
+    width: 20px;
+    fill: #a8bfc9;
+    margin-right: 10px;
+}
+
+.icon-restart{
+    background-color: #a8bfc9;
+    box-shadow: 0px -4px 0px 0px #6991a2 inset;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+.game-board{
+    display: flex;
+}
+
+.game-tile{
+    display: flex;
+    margin: 10px;
+    border-radius: 10px;
+    width: 120px;
+    height: 120px;
+    background-color: #1f3641;
+    box-shadow: 0px -4px 0px 0px #10212a inset;
+    cursor: pointer;
+    background-image: var(--chosen-mark-filled, none);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px 60px;
+}
+
+.game-tile:hover{
+    background-image: var(--chosen-mark-hover, none);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px 60px;
+}
+
+.score-board{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.score-tile-1, .score-tile-2, .score-tile-3{
+    display: flex;
+    flex-direction: column;
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #10212a;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border-radius: 10px;
+    width: 120px;
+    align-items: center;
+}
+
+.score{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.score-tile-1{
+    background-color: #31c3bd;
+}
+
+.score-tile-2{
+    background-color: #a8bfc9;
+}
+
+.score-tile-3{
+    background-color: #f2b137;
+}
